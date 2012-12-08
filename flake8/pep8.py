@@ -1183,7 +1183,7 @@ class Checker(object):
         self.max_line_length = options.max_line_length
         self.verbose = options.verbose
         self.filename = filename
-        if filename in (None, '-'):
+        if filename is None:
             self.filename = 'stdin'
             self.lines = lines or []
         elif hasattr(filename, 'readlines'):
